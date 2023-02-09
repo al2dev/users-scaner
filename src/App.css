@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  text-align: center;
+  vertical-align: center;
+  line-height: 100vh
+}
+
+body {
+  background: #2a5b84;
+  margin: 20px;
+}
