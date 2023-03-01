@@ -2,26 +2,33 @@ import './App.css'
 import { useState } from 'react'
 
 import ScanerBlock from './components/Scaner/ScanerBlock'
+import UsersList from './components/Users/UsersList'
 
 const INITIAL_DATA = [
   {
-    transaction: 1,
-    date: Date.now(),
-    status: "",
-    amount: 1000
+    username: "User Name",
+    age: 18
+  },
+  {
+    username: "User Name",
+    age: 19
   }
 ]
 
 export default function App() {
-  const [receipts, setReceipts] = useState(INITIAL_DATA);
+  const [users, setUsers] = useState(INITIAL_DATA);
 
   const onResultScanHandler = (result) => {
-    setReceipts([{ date: Date.now(), status: "", amount: result?.data }, ...receipts]);
+    setUsers([{ username: result?.username, age: result?.age }, ...users]);
   };
+
+  const onDeleteUserHandler = (username) => {
+  }
 
   return (
     <div>
       <ScanerBlock onResultScan={onResultScanHandler} />
+      <UsersList users={users} onDeleteUser={onDeleteUserHandler}/>
     </div>
   )
 }

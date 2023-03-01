@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Card from '../UI/Card'
-import Reader from './Scaner'
+import Scaner from './Scaner'
 import './ScanerBlock.css'
 
 const DEVICES = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone/i;
@@ -11,7 +11,7 @@ const ScanerBlock = (props) => {
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
-    DEVICES.test(navigator.userAgent) ? setDeviceType("Mobile") : setDeviceType("Desktop");
+    DEVICES.test(navigator.userAgent) ? setDeviceType("Mobile") : setDeviceType("Desktopц");
   });
 
   const onCancelHandler = () => { setShowForm(!showForm) };
